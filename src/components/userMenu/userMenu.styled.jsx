@@ -8,6 +8,7 @@ export const LinkStyled = styled(Link)`
 `;
 
 export const ContainerUserMenu = styled.div`
+  position: absolute;
   display: flex;
   justify-content: space-between;
   align-items: center;
