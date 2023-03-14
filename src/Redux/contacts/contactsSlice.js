@@ -6,7 +6,7 @@ import {
   editContact,
 } from './Operations';
 
-const contactsInitialState = {
+const initialState = {
   items: [],
   isLoading: false,
   error: null,
@@ -22,7 +22,7 @@ const handleRejected = (state, action) => {
 
 const contactsSlice = createSlice({
   name: 'contacts',
-  initialState: contactsInitialState,
+  initialState,
   extraReducers: {
     [fetchContacts.pending]: handlePending,
     [addContact.pending]: handlePending,

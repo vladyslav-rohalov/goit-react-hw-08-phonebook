@@ -1,33 +1,42 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+
 import {
-  ContainerLogin,
+  LinkStyled,
+  ContainerLock,
   ButtonStyled,
   IconAuthefication,
   ContainerAuth,
   ButtonSignUp,
   ButtonSignIn,
+  IconSignIn,
+  IconSignUp,
 } from './authNav.styled';
 
 export default function AuthNav() {
-  const [login, setLogin] = useState(false);
+  const [lock, setLogin] = useState(false);
 
   return (
-    <ContainerLogin>
-      <ButtonStyled onClick={() => setLogin(!login)}>
+    <ContainerLock>
+      <ButtonStyled onClick={() => setLogin(!lock)}>
         <IconAuthefication />
       </ButtonStyled>
-      {login && (
+      {lock && (
         <ContainerAuth>
-          <Link>
-            <ButtonSignUp type="button">Sign Up</ButtonSignUp>
-          </Link>
+          <LinkStyled to="/signup">
+            <ButtonSignUp type="button">
+              <IconSignUp />
+              Sign Up
+            </ButtonSignUp>
+          </LinkStyled>
 
-          <Link>
-            <ButtonSignIn type="button">Sign In</ButtonSignIn>
-          </Link>
+          <LinkStyled to="/signin">
+            <ButtonSignIn type="button">
+              <IconSignIn />
+              Sign In
+            </ButtonSignIn>
+          </LinkStyled>
         </ContainerAuth>
       )}
-    </ContainerLogin>
+    </ContainerLock>
   );
 }

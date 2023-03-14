@@ -7,7 +7,7 @@ import {
   selectFilteredContacts,
 } from 'Redux/Selectors';
 import { useEffect } from 'react';
-import { fetchContacts } from 'Redux/Operations';
+import { fetchContacts } from 'Redux/contacts/Operations';
 import {
   ContactsContainer,
   List,

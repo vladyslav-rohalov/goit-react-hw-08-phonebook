@@ -1,8 +1,14 @@
 import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
 import { AiOutlineLogin } from 'react-icons/ai';
 import { FaLock } from 'react-icons/fa';
+import { HiArrowNarrowRight } from 'react-icons/hi';
 
-export const ContainerLogin = styled.div`
+export const LinkStyled = styled(Link)`
+  text-decoration: none;
+`;
+
+export const ContainerLock = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -43,6 +49,7 @@ export const ContainerAuth = styled.div`
 
 export const ButtonSignUp = styled.button`
   ${buttonCoomonStyle}
+  position: relative;
   width: 9em;
   height: 3em;
   border-radius: 0.5em;
@@ -57,6 +64,7 @@ export const ButtonSignUp = styled.button`
 
 export const ButtonSignIn = styled.button`
   ${buttonCoomonStyle}
+  position: relative;
   width: 9em;
   height: 3em;
   border-radius: 0.5em;
@@ -67,4 +75,24 @@ export const ButtonSignIn = styled.button`
     rgba(58, 211, 100, 1) 31%,
     rgba(58, 211, 100, 1) 100%
   );
+`;
+
+export const IconSignIn = styled(AiOutlineLogin)`
+  position: absolute;
+  top: 50%;
+  left: 3%;
+  transform: translate(-3%, -50%);
+  fill: #000000;
+  width: 2em;
+  height: 2em;
+`;
+
+export const IconSignUp = styled(HiArrowNarrowRight)`
+  position: absolute;
+  top: 50%;
+  left: 3%;
+  transform: translate(-3%, -50%);
+  fill: #000000;
+  width: 2em;
+  height: 2em;
 `;

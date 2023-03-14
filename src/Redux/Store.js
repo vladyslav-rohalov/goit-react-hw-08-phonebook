@@ -8,9 +8,10 @@ import { configureStore } from '@reduxjs/toolkit';
 //   PURGE,
 //   REGISTER,
 // } from 'redux-persist';
-import { contactsReducer } from './contactsSlice';
-import { filterReducer } from './filterSlice';
+import { contactsReducer } from './contacts/contactsSlice';
+import { filterReducer } from './filter/filterSlice';
 // import { persistedContactsReducer } from './contactsSlice';
+// import { Storage } from 'redux-persist';
 
 export const store = configureStore({
   reducer: {

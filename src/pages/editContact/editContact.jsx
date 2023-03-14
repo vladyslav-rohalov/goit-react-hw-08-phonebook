@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { selectContacts } from 'Redux/Selectors';
-import { fetchContacts, editContact } from 'Redux/Operations';
+import { fetchContacts, editContact } from 'Redux/contacts/Operations';
 import { useParams } from 'react-router-dom';
-import { Container } from 'pages/home/home.styled';
+import { Container } from '../../components/elements/backdropContainer/backdropContainer.styled';
 import 'react-toastify/dist/ReactToastify.css';
 import ContactAddEdit from 'components/contactAddEdit/contactAddEdit';
 

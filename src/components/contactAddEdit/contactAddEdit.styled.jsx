@@ -1,5 +1,4 @@
 import styled from '@emotion/styled/macro';
-import { GrUserAdd } from 'react-icons/gr';
 import { RxAvatar } from 'react-icons/rx';
 import { TbCloudUpload } from 'react-icons/tb';
 
@@ -20,39 +19,9 @@ export const AddDetails = styled.div`
   box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
   padding: 1.25em 0.6em 0em 0.6em;
 `;
-export const Title = styled.h1`
-  font-size: 1.5em;
-  margin: 0 auto 1em;
-`;
 
 export const ContainerForm = styled.div`
   display: flex;
-`;
-
-export const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-`;
-
-export const Label = styled.label`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1.25em;
-`;
-
-export const Input = styled.input`
-  height: 2em;
-  padding-left: 1.9em;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 0.5em;
-  background-color: #ffffffcc;
-  &:focus {
-    outline: none;
-    border: 1px solid #2196f3;
-  }
 `;
 
 export const InputHidden = styled.input`
@@ -64,28 +33,6 @@ export const InputHidden = styled.input`
   margin: 0;
   padding: 0;
 `;
-
-export const AddButton = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 8em;
-  height: 2em;
-  margin: 0 auto;
-  background: linear-gradient(90deg, #ee82ee 0%, #673ab7 50%, #9c27b0 100%);
-  cursor: pointer;
-  border: none;
-  border-radius: 0.25em;
-  box-shadow: 0 0 0.5em #333;
-  transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
-  &:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 0.25em #111;
-    transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-`;
-
-export const IconAddContact = styled(GrUserAdd)``;
 
 export const AvatarIcon = styled(RxAvatar)`
   position: relative;

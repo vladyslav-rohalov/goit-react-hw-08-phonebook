@@ -11,6 +11,8 @@ const AddNewContact = lazy(() =>
 );
 const EditNewContact = lazy(() => import('../pages/editContact/editContact'));
 const Youtube = lazy(() => import('../pages/youtube/youtube'));
+const SignIn = lazy(() => import('../pages/signIn/signIn'));
+const SignUp = lazy(() => import('../pages/signUp/signUp'));
 
 export default function App() {
   return (
@@ -23,6 +25,8 @@ export default function App() {
         <Route path="/add" element={<AddNewContact />} />
         <Route path="/edit/:id" element={<EditNewContact />} />
         <Route path="/youtube" element={<Youtube />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
       </Route>
     </Routes>
   );
