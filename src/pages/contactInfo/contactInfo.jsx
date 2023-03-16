@@ -10,7 +10,7 @@ import Error from 'components/error/error';
 import {
   ContactContainer,
   ContactDetails,
-  ContactAvatar,
+  // ContactAvatar,
   ContactName,
   ContactPhoneMail,
 } from './contactInfo.styled';
@@ -33,10 +33,10 @@ export default function ContactInfo() {
         {error && <Error />}
         {contact && (
           <ContactDetails>
-            <ContactAvatar src={contact.avatar} alt="avatar" />
+            {/* <ContactAvatar src={contact.avatar} alt="avatar" /> */}
             <ContactName>{contact.name}</ContactName>
-            <ContactPhoneMail>{contact.phone}</ContactPhoneMail>
-            <ContactPhoneMail>{contact.email}</ContactPhoneMail>
+            <ContactPhoneMail>{contact.number}</ContactPhoneMail>
+            {/* <ContactPhoneMail>{contact.email}</ContactPhoneMail> */}
             <IconBar
               contact={contact}
               onDelClick={() => dispatch(delContact(id))}

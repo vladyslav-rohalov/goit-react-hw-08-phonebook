@@ -1,6 +1,5 @@
 import { useSelector } from 'react-redux';
 import authSelectors from 'Redux/auth/selectors';
-import UserMenu from 'components/userMenu/userMenu';
 import Time from 'components/time/time';
 import Navigation from 'components/navigation/navigation';
 import AuthNav from 'components/authNav/authNav';
@@ -11,8 +10,8 @@ export default function Home() {
   return (
     <Container>
       <Time />
-      {isLoggedIn ? <UserMenu /> : <AuthNav />}
-      <Navigation />
+      {!isLoggedIn && <AuthNav />}
+      {isLoggedIn && <Navigation />}
     </Container>
   );
 }

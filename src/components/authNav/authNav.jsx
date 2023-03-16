@@ -8,8 +8,6 @@ import {
   ContainerAuth,
   ButtonSignUp,
   ButtonSignIn,
-  IconSignIn,
-  IconSignUp,
 } from './authNav.styled';
 
 export default function AuthNav() {
@@ -24,15 +22,15 @@ export default function AuthNav() {
         <ContainerAuth>
           <LinkStyled to="/signup">
             <ButtonSignUp type="button">
-              <IconSignUp />
-              Sign Up
+              Sign <br />
+              Up
             </ButtonSignUp>
           </LinkStyled>
 
           <LinkStyled to="/signin">
             <ButtonSignIn type="button">
-              <IconSignIn />
-              Sign In
+              Sign <br />
+              In
             </ButtonSignIn>
           </LinkStyled>
         </ContainerAuth>

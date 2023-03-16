@@ -4,29 +4,29 @@ import ButtonCommon from 'components/elements/button/button';
 import { Form, Label, Input } from '../elements/form/form.styled';
 import {
   ContainerForm,
-  InputHidden,
-  ButtonAvatar,
-  AvatarIcon,
-  UploadIcon,
+  // InputHidden,
+  // ButtonAvatar,
+  // AvatarIcon,
+  // UploadIcon,
 } from './contactAddEdit.styled';
 
 export default function ContactAddEdit({
   title,
   titleButton,
   handleSubmit,
-  handlePick,
-  avatarPicker,
   name,
   phone,
-  email,
+  // handlePick,
+  // avatarPicker,
+  // email,
 }) {
   return (
     <ContainerUtils>
       <Title>{title}</Title>
       <ContainerForm>
         <Form onSubmit={handleSubmit}>
-          {/* =============================================== */}
-          <Label>
+          {/* ========== Avatar ========== */}
+          {/* <Label>
             <ButtonAvatar onClick={handlePick} type="button">
               <AvatarIcon />
               <UploadIcon />
@@ -37,8 +37,8 @@ export default function ContactAddEdit({
               name="avatar"
               accept="image/*,.png,.jpeg,.webp"
             />
-          </Label>
-          {/* =============================================== */}
+          </Label> */}
+          {/* ========== Avatar ========== */}
           <Label>
             <Input
               type="text"
@@ -60,8 +60,8 @@ export default function ContactAddEdit({
               required
             />
           </Label>
-
-          <Label>
+          {/* ========== Email ========== */}
+          {/* <Label>
             <Input
               type="email"
               name="email"
@@ -70,7 +70,8 @@ export default function ContactAddEdit({
               pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
               title="The email address must be set to letters and contain @, it must not contain spaces, dashes, or parentheses. "
             />
-          </Label>
+          </Label> */}
+          {/* ========== Email ========== */}
           <ButtonCommon titleButton={titleButton} />
         </Form>
       </ContainerForm>

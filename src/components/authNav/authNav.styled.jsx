@@ -24,6 +24,7 @@ const buttonCoomonStyle = `
   justify-content: center;
   border: none;
   cursor: pointer;
+  font-size: 0.9em;
 `;
 
 export const ButtonStyled = styled.button`
@@ -50,29 +51,28 @@ export const ContainerAuth = styled.div`
 export const ButtonSignUp = styled.button`
   ${buttonCoomonStyle}
   position: relative;
-  width: 9em;
-  height: 3em;
-  border-radius: 0.5em;
+  width: 56px;
+  height: 56px;
+  border-radius: 25%;
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0.8) 0%,
-    rgba(255, 255, 255, 1) 27%,
-    rgba(254, 186, 82, 1) 31%,
-    rgba(254, 186, 82, 1) 100%
+    rgba(180, 98, 14, 1) 0%,
+    rgba(240, 195, 78, 1) 13%,
+    rgba(240, 195, 78, 1) 100%
   );
 `;
 
 export const ButtonSignIn = styled.button`
-  ${buttonCoomonStyle}
   position: relative;
-  width: 9em;
-  height: 3em;
-  border-radius: 0.5em;
+  ${buttonCoomonStyle}
+  width: 56px;
+  height: 56px;
+  border-radius: 25%;
+
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0.8) 0%,
-    rgba(255, 255, 255, 1) 27%,
-    rgba(58, 211, 100, 1) 31%,
+    rgba(25, 133, 55, 1) 0%,
+    rgba(58, 211, 100, 1) 13%,
     rgba(58, 211, 100, 1) 100%
   );
 `;

@@ -1,6 +1,10 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Link, useLocation } from 'react-router-dom';
+import Backdrop from 'components/backdrop/backdrop';
+import UserMenu from 'components/userMenu/userMenu';
+import { useSelector } from 'react-redux';
+import authSelectors from 'Redux/auth/selectors';
 import {
   Frame,
   Camera,
@@ -14,28 +18,37 @@ import {
 export default function SharedLayout() {
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/home';
+  const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
   return (
-    <Frame>
-      <Camera />
-      <Suspense>
-        <Outlet />
-      </Suspense>
-      <Link to={'/'}>
-        <ButtonLock />
-      </Link>
+    <div>
+      <Backdrop />
+      <Frame>
+        <Camera />
 
-      <BackBar>
-        <Link to={'/home'}>
-          <Button>
-            <IconHome />
-          </Button>
+        {isLoggedIn && <UserMenu />}
+        {/* <Suspense fallback={<p>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</p>}>
+         */}
+        <Suspense>
+          <Outlet />
+        </Suspense>
+
+        <Link to={'/'}>
+          <ButtonLock />
         </Link>
-        <Link to={backLinkHref}>
-          <Button>
-            <IconBack />
-          </Button>
-        </Link>
-      </BackBar>
-    </Frame>
+
+        <BackBar>
+          <Link to={'/home'}>
+            <Button>
+              <IconHome />
+            </Button>
+          </Link>
+          <Link to={backLinkHref}>
+            <Button>
+              <IconBack />
+            </Button>
+          </Link>
+        </BackBar>
+      </Frame>
+    </div>
   );
 }

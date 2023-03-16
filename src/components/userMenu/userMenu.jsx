@@ -1,6 +1,10 @@
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import authSelectors from 'Redux/auth/selectors';
+import authOperations from 'Redux/auth/operations';
 import {
   ContainerUserMenu,
-  GreetingsText,
+  Greetings,
   IconUser,
   LinkStyled,
   ButtonSignOut,
@@ -8,14 +12,18 @@ import {
 } from './userMenu.styled';
 
 export default function UserMenu() {
+  const dispatch = useDispatch();
+  const userName = useSelector(authSelectors.selectUserName);
   return (
     <ContainerUserMenu>
-      <GreetingsText>Hi, </GreetingsText>
-      <IconUser />
+      <Greetings>
+        <IconUser />
+        Hi, {userName}
+      </Greetings>
+
       <LinkStyled>
-        <ButtonSignOut>
+        <ButtonSignOut onClick={() => dispatch(authOperations.signOut())}>
           <IconSignOut />
-          SignOut
         </ButtonSignOut>
       </LinkStyled>
     </ContainerUserMenu>

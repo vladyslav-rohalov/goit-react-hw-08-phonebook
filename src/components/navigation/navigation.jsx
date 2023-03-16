@@ -15,19 +15,19 @@ export default function Navigation() {
   return (
     <HomeIconBar>
       <LinkStyled to="/phonebook">
-        <ButtonPhone>
+        <ButtonPhone type="button">
           <IconPhone />
         </ButtonPhone>
       </LinkStyled>
 
       <LinkStyled>
-        <ButtonMessaage disabled>
+        <ButtonMessaage>
           <IconMessage />
         </ButtonMessaage>
       </LinkStyled>
 
       <LinkStyled>
-        <ButtonMedia disabled>
+        <ButtonMedia>
           <IconChrome />
         </ButtonMedia>
       </LinkStyled>

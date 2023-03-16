@@ -24,13 +24,13 @@ export default function EditContact() {
     e.preventDefault();
     const form = e.target;
     const name = form.elements.name.value;
-    const phone = form.elements.number.value;
-    const email = form.elements.email.value;
+    const number = form.elements.number.value;
+    // const email = form.elements.email.value;
     const contact = {
       id: id,
       name: name,
-      phone: phone,
-      email: email,
+      number: number,
+      // email: email,
     };
     dispatch(editContact(contact));
     navigate('/phonebook', { replace: true });
@@ -45,8 +45,8 @@ export default function EditContact() {
           titleButton="Edit contact"
           handleSubmit={handleSubmit}
           name={contact.name}
-          phone={contact.phone}
-          email={contact.email}
+          phone={contact.number}
+          // email={contact.email}
         />
       )}
     </Container>
