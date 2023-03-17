@@ -2,13 +2,13 @@ import {
   HomeIconBar,
   LinkStyled,
   ButtonPhone,
-  ButtonMessaage,
+  ButtonFilmoteka,
+  IconFilmoteka,
   IconPhone,
-  IconMessage,
-  ButtonMedia,
   ButtonYoutube,
-  IconChrome,
   IconYouTube,
+  ButtonCamera,
+  IconCamera,
 } from './navigation.styled';
 
 export default function Navigation() {
@@ -20,16 +20,16 @@ export default function Navigation() {
         </ButtonPhone>
       </LinkStyled>
 
-      <LinkStyled>
-        <ButtonMessaage>
-          <IconMessage />
-        </ButtonMessaage>
+      <LinkStyled to="/filmoteka">
+        <ButtonFilmoteka>
+          <IconFilmoteka />
+        </ButtonFilmoteka>
       </LinkStyled>
 
-      <LinkStyled>
-        <ButtonMedia>
-          <IconChrome />
-        </ButtonMedia>
+      <LinkStyled to="/camera">
+        <ButtonCamera>
+          <IconCamera />
+        </ButtonCamera>
       </LinkStyled>
 
       <LinkStyled to="/youtube">

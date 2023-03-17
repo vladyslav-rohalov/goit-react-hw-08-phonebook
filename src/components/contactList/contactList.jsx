@@ -15,7 +15,7 @@ import {
   LinkStyled,
 } from './contactList.styled';
 import Error from 'components/error/error';
-import Loader from 'components/loader/loader';
+import { SkeletonList } from 'components/skeleton/skeleton';
 
 export default function ContactList() {
   const items = useSelector(selectContacts);
@@ -31,7 +31,7 @@ export default function ContactList() {
 
   return (
     <ContactsContainer>
-      {isLoading && <Loader isLoading={isLoading} />}
+      {isLoading && <SkeletonList />}
       {error && <Error />}
       {items.length > 0 && (
         <List>

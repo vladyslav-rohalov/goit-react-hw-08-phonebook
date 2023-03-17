@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 import { BiPhone } from 'react-icons/bi';
-import { AiOutlineMessage } from 'react-icons/ai';
-import { FcGoogle } from 'react-icons/fc';
+import { TbMovie } from 'react-icons/tb';
+import { HiCamera } from 'react-icons/hi';
 import { AiFillYoutube } from 'react-icons/ai';
 
 export const HomeIconBar = styled.div`
@@ -44,30 +44,27 @@ export const IconPhone = styled(BiPhone)`
   fill: white;
 `;
 
-export const ButtonMessaage = styled.button`
+export const ButtonFilmoteka = styled.button`
   ${buttonDefaultSyle}
   background-color: #41a1ef;
-  opacity: 0.3;
   cursor: pointer;
 `;
 
-export const IconMessage = styled(AiOutlineMessage)`
+export const IconFilmoteka = styled(TbMovie)`
   width: 2.5em;
   height: 2.5em;
   fill: white;
 `;
 
-export const ButtonMedia = styled.button`
+export const ButtonCamera = styled.button`
   ${buttonDefaultSyle}
-  background-color: #ffffff;
+  background-color: #F84924;
   cursor: pointer;
-  opacity: 0.3;
 `;
 
-export const IconChrome = styled(FcGoogle)`
+export const IconCamera = styled(HiCamera)`
   width: 2.5em;
   height: 2.5em;
-  fill: #ffffffcc;
 `;
 
 export const ButtonYoutube = styled.button`

@@ -42,15 +42,10 @@ export const ButtonSignOut = styled.button`
   justify-content: end;
   border: none;
   cursor: pointer;
-  width: 2em;
-  height: 1em;
+  width: 1.25em;
+  height: 1.25em;
   border-radius: 0.5em;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 14, 0, 1) 0%,
-    rgba(254, 186, 82, 1) 19%,
-    rgba(254, 186, 82, 1) 100%
-  );
+  background: transparent;
 `;
 
 export const IconSignOut = styled(RiLogoutCircleLine)`
@@ -58,7 +53,7 @@ export const IconSignOut = styled(RiLogoutCircleLine)`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  fill: #000000;
-  width: 1em;
-  height: 1em;
+  fill: #ffffff;
+  width: 100%;
+  height: 100%;
 `;

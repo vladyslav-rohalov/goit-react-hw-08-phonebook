@@ -1,11 +1,10 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { selectContacts, selectIsLoading, selectError } from 'Redux/Selectors';
+import { selectContacts, selectError } from 'Redux/Selectors';
 import { useEffect } from 'react';
 import { fetchContacts, delContact } from 'Redux/contacts/Operations';
 import { Container } from '../../components/elements/backdropContainer/backdropContainer.styled';
 import IconBar from 'components/iconBar/iconBar';
-import Loader from 'components/loader/loader';
 import Error from 'components/error/error';
 import {
   ContactContainer,
@@ -17,7 +16,6 @@ import {
 
 export default function ContactInfo() {
   const items = useSelector(selectContacts);
-  const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
   const dispatch = useDispatch();
   const { id } = useParams();
@@ -29,7 +27,6 @@ export default function ContactInfo() {
   return (
     <Container>
       <ContactContainer>
-        {isLoading && <Loader isLoading={isLoading} />}
         {error && <Error />}
         {contact && (
           <ContactDetails>

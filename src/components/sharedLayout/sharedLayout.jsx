@@ -24,10 +24,8 @@ export default function SharedLayout() {
       <Backdrop />
       <Frame>
         <Camera />
-
         {isLoggedIn && <UserMenu />}
-        {/* <Suspense fallback={<p>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</p>}>
-         */}
+
         <Suspense>
           <Outlet />
         </Suspense>

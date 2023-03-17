@@ -5,6 +5,7 @@ import { IoMdFingerPrint } from 'react-icons/io';
 export const Locked = styled.div`
   position: absolute;
   display: flex;
+  flex-wrap: wrap;
   left: 0;
   background-color: black;
   height: 100%;

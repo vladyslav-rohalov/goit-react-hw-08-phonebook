@@ -4,11 +4,12 @@ import authSelectors from 'Redux/auth/selectors';
 
 export default function RestrictedRoute({
   component: Component,
-  redirectTo = '/home',
+  redirectTo = '/',
 }) {
   const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
-  const isRefreshing = useSelector(authSelectors.selectIsRefreshing);
-  const shoudRedirect = !isLoggedIn && !isRefreshing;
+  const isLoading = useSelector(authSelectors.selectIsLoading);
+  const shouldRedirect = !isLoggedIn && !isLoading;
+  // console.log('shouldRedirect = ', shouldRedirect);
 
-  return shoudRedirect ? <Navigate to={redirectTo} /> : <Component />;
+  return shouldRedirect ? <Navigate to={redirectTo} /> : <Component />;
 }
