@@ -9,7 +9,7 @@ export default function RestrictedRoute({
   const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
   const isLoading = useSelector(authSelectors.selectIsLoading);
   const shouldRedirect = !isLoggedIn && !isLoading;
-  // console.log('shouldRedirect = ', shouldRedirect);
+  console.log('shouldRedirect = ', isLoggedIn);
 
   return shouldRedirect ? <Navigate to={redirectTo} /> : <Component />;
 }

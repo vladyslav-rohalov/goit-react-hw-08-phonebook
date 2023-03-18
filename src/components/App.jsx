@@ -57,12 +57,17 @@ export default function App() {
           path="/youtube"
           element={<PrivateRoute component={Youtube} redirectTo="/" />}
         />
-        <Route path="/filmoteka" element={<Filmoteka />} />
-        <Route path="/camera" element={<Camera />} />
-        {/* <Route
-          path="/google"
-          element={<PrivateRoute component={Google} redirectTo="/" />}
-        /> */}
+        <Route
+          path="/filmoteka"
+          element={<PrivateRoute component={Filmoteka} redirectTo="/" />}
+        />
+        <Route
+          path="/camera"
+          element={<PrivateRoute component={Camera} redirectTo="/" />}
+        />
+        {/* <Route path="/filmoteka" element={<Filmoteka />} /> */}
+        {/* <Route path="/camera" element={<Camera />} /> */}
+
         <Route
           path="/signin"
           element={<RestrictedRoute component={SignIn} redirectTo="/home" />}

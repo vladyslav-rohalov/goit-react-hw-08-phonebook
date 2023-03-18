@@ -93,7 +93,7 @@ export const Camera = styled(BsCircleFill)`
   width: 1.25em;
   height: 1.25em;
   margin: 0.25em auto;
-  z-index: 2;
+  z-index: 20;
 `;
 
 export const BackBar = styled.div`
@@ -109,6 +109,7 @@ export const BackBar = styled.div`
   border-bottom-left-radius: 1.1em;
   border-bottom-right-radius: 1.1em;
   align-items: center;
+  z-index: 100;
 `;
 
 export const Button = styled.button`
