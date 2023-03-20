@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import Gallery from 'components/gallery/gallery';
+import GalleryMobile from 'components/gallery/gallery';
 import {
   Container,
   Video,
@@ -72,7 +72,7 @@ export default function Camera() {
       </ButtonGallery>
       <ButtonPhoto type="button" onClick={() => takePhoto()}></ButtonPhoto>
 
-      {isOpenGallery && <Gallery gallery={gallery} />}
+      {isOpenGallery && <GalleryMobile gallery={gallery} />}
     </Container>
   );
 }
