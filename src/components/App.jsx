@@ -6,7 +6,6 @@ import authOperations from 'Redux/auth/operations';
 import SharedLayout from './sharedLayout/sharedLayout';
 import PrivateRoute from './redirect/privateRoutes';
 import RestrictedRoute from './redirect/restrictedRoutes';
-import { useAuth } from 'hooks/useAuth';
 
 const ScreenLock = lazy(() => import('../pages/screenLock/screenLock'));
 const Home = lazy(() => import('../pages/home/home'));
@@ -24,15 +23,12 @@ const AddNewContact = lazy(() =>
 
 export default function App() {
   const dispatch = useDispatch();
-  const { isRefreshing } = useAuth();
 
   useEffect(() => {
     dispatch(authOperations.refreshUser());
   }, [dispatch]);
 
-  return isRefreshing ? (
-    <b>Refreshing user...</b>
-  ) : (
+  return (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
         <Route path="/" element={<ScreenLock />} />

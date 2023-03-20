@@ -14,6 +14,7 @@ export const Container = styled.div`
   background-image: url(${backdrop});
   background-size: cover;
   overflow-y: auto;
+  box-shadow: 0px 2px 6px 4px rgba(121, 128, 133, 0.3) inset;
   &::-webkit-scrollbar {
     width: 0px;
     height: 0px;

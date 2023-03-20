@@ -29,14 +29,15 @@ export const Frame = styled.div`
     position: fixed;
     display: block;
     top: 15%;
-    left: -3.4em;
-    width: 6.25em;
+    left: -8.3vh;
+    width: 15vh;
     height: 0.5em;
     background: black;
     border-bottom-right-radius: 0.4em;
     border-bottom-left-radius: 0.4em;
     border-left: 0.6em;
     rotate: 90deg;
+    box-shadow: 2px 0px 2px 2px rgba(121, 128, 133, 0.3) inset;
   }
 `;
 
@@ -65,8 +66,8 @@ export const ButtonLock = styled.button`
   position: fixed;
   display: block;
   top: 15%;
-  right: -2.45em;
-  width: 4em;
+  right: -4.9vh;
+  width: 8vh;
   height: 0.5em;
   background: black;
   border: none;
@@ -75,6 +76,7 @@ export const ButtonLock = styled.button`
   border-left: 0.7em;
   rotate: 90deg;
   cursor: pointer;
+  box-shadow: -2px 0px 2px 2px rgba(121, 128, 133, 0.3) inset;
   &::before {
     content: '';
     position: absolute;
@@ -110,6 +112,7 @@ export const BackBar = styled.div`
   border-bottom-right-radius: 1.1em;
   align-items: center;
   z-index: 100;
+  box-shadow: 0px -5px 6px 4px rgba(121, 128, 133, 0.3) inset;
 `;
 
 export const Button = styled.button`

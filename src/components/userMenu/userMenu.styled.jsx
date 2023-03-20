@@ -16,7 +16,7 @@ export const ContainerUserMenu = styled.div`
   width: calc(100% - 1.25em);
   height: 1em;
   padding: 0 0.625em;
-  margin-top: 0.2em;
+  margin-top: 0.3em;
   color: #ffffff;
   z-index: 1;
 `;

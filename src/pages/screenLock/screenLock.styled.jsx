@@ -7,10 +7,11 @@ export const Locked = styled.div`
   display: flex;
   flex-wrap: wrap;
   left: 0;
-  background-color: black;
+  background-color: #000000;
   height: 100%;
   width: 100%;
   border-radius: 1.1em;
+  box-shadow: 0px 0px 6px 4px rgba(121, 128, 133, 0.3) inset;
 `;
 
 export const TimeDate = styled.div`

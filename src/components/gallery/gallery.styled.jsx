@@ -22,3 +22,17 @@ export const Container = styled.div`
     background: transparent;
   }
 `;
+
+export const Gallery = styled.ul`
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0;
+`;
+
+export const GalleryItem = styled.li``;
+
+export const GalleryImage = styled.img``;
