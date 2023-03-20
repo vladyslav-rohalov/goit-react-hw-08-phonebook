@@ -1,5 +1,4 @@
 import { useDispatch } from 'react-redux';
-// import { setFilter } from 'Redux/contactsSlice';
 import { setFilter } from 'Redux/filter/filterSlice';
 import { useLocation } from 'react-router-dom';
 import {

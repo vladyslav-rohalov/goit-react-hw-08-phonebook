@@ -3,8 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { Link, useLocation } from 'react-router-dom';
 import Backdrop from 'components/backdrop/backdrop';
 import UserMenu from 'components/userMenu/userMenu';
-import { useSelector } from 'react-redux';
-import authSelectors from 'Redux/auth/selectors';
+import { useAuth } from 'hooks/useAuth';
 import {
   Frame,
   Camera,
@@ -18,7 +17,7 @@ import {
 export default function SharedLayout() {
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/home';
-  const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
+  const { isLoggedIn } = useAuth();
   return (
     <div>
       <Backdrop />

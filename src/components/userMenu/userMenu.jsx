@@ -1,6 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
-import authSelectors from 'Redux/auth/selectors';
+import { useAuth } from 'hooks/useAuth';
 import authOperations from 'Redux/auth/operations';
 import {
   ContainerUserMenu,
@@ -13,16 +12,19 @@ import {
 
 export default function UserMenu() {
   const dispatch = useDispatch();
-  const userName = useSelector(authSelectors.selectUserName);
+  const { user } = useAuth();
   return (
     <ContainerUserMenu>
       <Greetings>
         <IconUser />
-        Hi, {userName}
+        Hi, {user.name}
       </Greetings>
 
       <LinkStyled>
-        <ButtonSignOut onClick={() => dispatch(authOperations.signOut())}>
+        <ButtonSignOut
+          type="button"
+          onClick={() => dispatch(authOperations.signOut())}
+        >
           <IconSignOut />
         </ButtonSignOut>
       </LinkStyled>

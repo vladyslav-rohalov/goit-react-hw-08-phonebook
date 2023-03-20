@@ -6,6 +6,7 @@ import authOperations from 'Redux/auth/operations';
 import SharedLayout from './sharedLayout/sharedLayout';
 import PrivateRoute from './redirect/privateRoutes';
 import RestrictedRoute from './redirect/restrictedRoutes';
+import { useAuth } from 'hooks/useAuth';
 
 const ScreenLock = lazy(() => import('../pages/screenLock/screenLock'));
 const Home = lazy(() => import('../pages/home/home'));
@@ -23,58 +24,65 @@ const AddNewContact = lazy(() =>
 
 export default function App() {
   const dispatch = useDispatch();
+  const { isRefreshing } = useAuth();
 
   useEffect(() => {
     dispatch(authOperations.refreshUser());
   }, [dispatch]);
 
-  return (
+  return isRefreshing ? (
+    <b>Refreshing user...</b>
+  ) : (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
         <Route path="/" element={<ScreenLock />} />
         <Route
           path="/home"
-          element={<PrivateRoute component={Home} redirectTo="/" />}
+          element={<PrivateRoute redirectTo="/" component={<Home />} />}
         />
         <Route
           path="/phonebook"
-          element={<PrivateRoute component={Phonebook} redirectTo="/" />}
+          element={<PrivateRoute redirectTo="/" component={<Phonebook />} />}
         />
         <Route
           path="/phonebook/:id"
-          element={<PrivateRoute component={ContactInfo} redirectTo="/" />}
+          element={<PrivateRoute redirectTo="/" component={<ContactInfo />} />}
         />
         <Route
           path="/add"
-          element={<PrivateRoute component={AddNewContact} redirectTo="/" />}
+          element={
+            <PrivateRoute redirectTo="/" component={<AddNewContact />} />
+          }
         />
-
         <Route
           path="/edit/:id"
-          element={<PrivateRoute component={EditNewContact} redirectTo="/" />}
+          element={
+            <PrivateRoute redirectTo="/" component={<EditNewContact />} />
+          }
         />
         <Route
           path="/youtube"
-          element={<PrivateRoute component={Youtube} redirectTo="/" />}
+          element={<PrivateRoute redirectTo="/" component={<Youtube />} />}
         />
         <Route
           path="/filmoteka"
-          element={<PrivateRoute component={Filmoteka} redirectTo="/" />}
+          element={<PrivateRoute redirectTo="/" component={<Filmoteka />} />}
         />
         <Route
           path="/camera"
-          element={<PrivateRoute component={Camera} redirectTo="/" />}
+          element={<PrivateRoute redirectTo="/" component={<Camera />} />}
         />
-        {/* <Route path="/filmoteka" element={<Filmoteka />} /> */}
-        {/* <Route path="/camera" element={<Camera />} /> */}
-
         <Route
           path="/signin"
-          element={<RestrictedRoute component={SignIn} redirectTo="/home" />}
+          element={
+            <RestrictedRoute redirectTo="/home" component={<SignIn />} />
+          }
         />
         <Route
           path="/signup"
-          element={<RestrictedRoute component={SignUp} redirectTo="/home" />}
+          element={
+            <RestrictedRoute redirectTo="/home" component={<SignUp />} />
+          }
         />
       </Route>
     </Routes>
