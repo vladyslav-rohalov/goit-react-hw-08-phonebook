@@ -1,11 +1,15 @@
 import { useAuth } from 'hooks/useAuth';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 
 export default function RestrictedRoute({
   component: Component,
   redirectTo = '/home',
 }) {
   const { isLoggedIn } = useAuth();
-
-  return isLoggedIn ? <Navigate to={redirectTo} /> : Component;
+  const location = useLocation();
+  return isLoggedIn ? (
+    <Navigate to={location.state?.from ?? redirectTo} />
+  ) : (
+    Component
+  );
 }

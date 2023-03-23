@@ -12,7 +12,7 @@ export const Frame = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   width: 18.75em;
-  height: 80vh;
+  height: 40em;
   max-height: 100vh;
   border: 0.3em solid black;
   border-radius: 1.5em;
@@ -29,8 +29,8 @@ export const Frame = styled.div`
     position: fixed;
     display: block;
     top: 15%;
-    left: -8.3vh;
-    width: 15vh;
+    left: -4.2em;
+    width: 7.5em;
     height: 0.5em;
     background: black;
     border-bottom-right-radius: 0.4em;
@@ -66,8 +66,8 @@ export const ButtonLock = styled.button`
   position: fixed;
   display: block;
   top: 15%;
-  right: -4.9vh;
-  width: 8vh;
+  right: -2em;
+  width: 3em;
   height: 0.5em;
   background: black;
   border: none;

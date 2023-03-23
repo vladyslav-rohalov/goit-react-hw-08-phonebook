@@ -2,6 +2,7 @@ import { lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { useAuth } from 'hooks/useAuth';
 import authOperations from 'Redux/auth/operations';
 import SharedLayout from './sharedLayout/sharedLayout';
 import PrivateRoute from './redirect/privateRoutes';
@@ -23,64 +24,83 @@ const AddNewContact = lazy(() =>
 
 export default function App() {
   const dispatch = useDispatch();
+  const { isRefreshing } = useAuth();
 
   useEffect(() => {
     dispatch(authOperations.refreshUser());
   }, [dispatch]);
 
   return (
-    <Routes>
-      <Route path="/" element={<SharedLayout />}>
-        <Route path="/" element={<ScreenLock />} />
-        <Route
-          path="/home"
-          element={<PrivateRoute redirectTo="/" component={<Home />} />}
-        />
-        <Route
-          path="/phonebook"
-          element={<PrivateRoute redirectTo="/" component={<Phonebook />} />}
-        />
-        <Route
-          path="/phonebook/:id"
-          element={<PrivateRoute redirectTo="/" component={<ContactInfo />} />}
-        />
-        <Route
-          path="/add"
-          element={
-            <PrivateRoute redirectTo="/" component={<AddNewContact />} />
-          }
-        />
-        <Route
-          path="/edit/:id"
-          element={
-            <PrivateRoute redirectTo="/" component={<EditNewContact />} />
-          }
-        />
-        <Route
-          path="/youtube"
-          element={<PrivateRoute redirectTo="/" component={<Youtube />} />}
-        />
-        <Route
-          path="/filmoteka"
-          element={<PrivateRoute redirectTo="/" component={<Filmoteka />} />}
-        />
-        <Route
-          path="/camera"
-          element={<PrivateRoute redirectTo="/" component={<Camera />} />}
-        />
-        <Route
-          path="/signin"
-          element={
-            <RestrictedRoute redirectTo="/home" component={<SignIn />} />
-          }
-        />
-        <Route
-          path="/signup"
-          element={
-            <RestrictedRoute redirectTo="/home" component={<SignUp />} />
-          }
-        />
-      </Route>
-    </Routes>
+    !isRefreshing && (
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<ScreenLock />} />
+          <Route
+            path="home"
+            element={<PrivateRoute redirectTo="/signin" component={<Home />} />}
+          />
+          <Route
+            path="phonebook"
+            element={
+              <PrivateRoute redirectTo="/signin" component={<Phonebook />} />
+            }
+          />
+          <Route
+            path="phonebook/:id"
+            element={
+              <PrivateRoute redirectTo="/signin" component={<ContactInfo />} />
+            }
+          />
+          <Route
+            path="add"
+            element={
+              <PrivateRoute
+                redirectTo="/signin"
+                component={<AddNewContact />}
+              />
+            }
+          />
+          <Route
+            path="edit/:id"
+            element={
+              <PrivateRoute
+                redirectTo="/signin"
+                component={<EditNewContact />}
+              />
+            }
+          />
+          <Route
+            path="youtube"
+            element={
+              <PrivateRoute redirectTo="/signin" component={<Youtube />} />
+            }
+          />
+          <Route
+            path="filmoteka"
+            element={
+              <PrivateRoute redirectTo="/signin" component={<Filmoteka />} />
+            }
+          />
+          <Route
+            path="camera"
+            element={
+              <PrivateRoute redirectTo="/signin" component={<Camera />} />
+            }
+          />
+          <Route
+            path="signin"
+            element={
+              <RestrictedRoute redirectTo="/home" component={<SignIn />} />
+            }
+          />
+          <Route
+            path="signup"
+            element={
+              <RestrictedRoute redirectTo="/home" component={<SignUp />} />
+            }
+          />
+        </Route>
+      </Routes>
+    )
   );
 }
