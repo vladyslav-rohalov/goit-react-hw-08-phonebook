@@ -2,7 +2,8 @@
 
 ## Application review
 
-# Registration or login is required to log into the application, the backend is written in NodeJs the server is located on heroku
+# Registration or login is required. For quick access, use: login:
+88888@gmail.com pass: Qwerty123!
 
 ![login](./assets/login-min.gif)
 
@@ -35,8 +36,7 @@ except skeleton was written by myself. To manage the state, I used the Redux
 Toolkit. The work with the server is presented in another project. The backend
 is written in NodeJS using the MongoDB database.
 
-Login to the application via login and password. For quick access, use: login:
-88888@gmail.com pass: Qwerty123!
+
 
 ## Technology Stack
 
